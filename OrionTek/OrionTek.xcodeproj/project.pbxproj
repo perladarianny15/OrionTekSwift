@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4407C672685412700B6DFC4 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4407C662685412700B6DFC4 /* AddressView.swift */; };
+		D4407C682685412700B6DFC4 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4407C662685412700B6DFC4 /* AddressView.swift */; };
+		D4407C6A2685638A00B6DFC4 /* addAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4407C692685638A00B6DFC4 /* addAddressView.swift */; };
+		D4407C6B2685638A00B6DFC4 /* addAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4407C692685638A00B6DFC4 /* addAddressView.swift */; };
 		D4550B2A26841A5C00596B07 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4550B2926841A5C00596B07 /* Tests_iOS.swift */; };
 		D4550B3526841A5C00596B07 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4550B3426841A5C00596B07 /* Tests_macOS.swift */; };
 		D4550B3726841A5C00596B07 /* OrionTekApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4550B0E26841A5A00596B07 /* OrionTekApp.swift */; };
@@ -15,6 +19,8 @@
 		D4550B3A26841A5C00596B07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4550B0F26841A5A00596B07 /* ContentView.swift */; };
 		D4550B3B26841A5C00596B07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4550B1026841A5C00596B07 /* Assets.xcassets */; };
 		D4550B3C26841A5C00596B07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4550B1026841A5C00596B07 /* Assets.xcassets */; };
+		D47D37BD26842DE000923415 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47D37BC26842DE000923415 /* Address.swift */; };
+		D47D37BF26842FA400923415 /* DbConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47D37BE26842FA400923415 /* DbConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4407C662685412700B6DFC4 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		D4407C692685638A00B6DFC4 /* addAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addAddressView.swift; sourceTree = "<group>"; };
 		D4550B0E26841A5A00596B07 /* OrionTekApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrionTekApp.swift; sourceTree = "<group>"; };
 		D4550B0F26841A5A00596B07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D4550B1026841A5C00596B07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +57,8 @@
 		D4550B3026841A5C00596B07 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4550B3426841A5C00596B07 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		D4550B3626841A5C00596B07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D47D37BC26842DE000923415 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		D47D37BE26842FA400923415 /* DbConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +108,13 @@
 		D4550B0D26841A5A00596B07 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D47D37BB26842DB400923415 /* Helper */,
+				D47D37B926842D8400923415 /* Models */,
 				D4550B0E26841A5A00596B07 /* OrionTekApp.swift */,
 				D4550B0F26841A5A00596B07 /* ContentView.swift */,
 				D4550B1026841A5C00596B07 /* Assets.xcassets */,
+				D4407C662685412700B6DFC4 /* AddressView.swift */,
+				D4407C692685638A00B6DFC4 /* addAddressView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -149,6 +163,22 @@
 				D4550B3626841A5C00596B07 /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		D47D37B926842D8400923415 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D47D37BC26842DE000923415 /* Address.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D47D37BB26842DB400923415 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D47D37BE26842FA400923415 /* DbConnection.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +340,10 @@
 			files = (
 				D4550B3926841A5C00596B07 /* ContentView.swift in Sources */,
 				D4550B3726841A5C00596B07 /* OrionTekApp.swift in Sources */,
+				D47D37BD26842DE000923415 /* Address.swift in Sources */,
+				D47D37BF26842FA400923415 /* DbConnection.swift in Sources */,
+				D4407C6A2685638A00B6DFC4 /* addAddressView.swift in Sources */,
+				D4407C672685412700B6DFC4 /* AddressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +353,8 @@
 			files = (
 				D4550B3A26841A5C00596B07 /* ContentView.swift in Sources */,
 				D4550B3826841A5C00596B07 /* OrionTekApp.swift in Sources */,
+				D4407C6B2685638A00B6DFC4 /* addAddressView.swift in Sources */,
+				D4407C682685412700B6DFC4 /* AddressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
