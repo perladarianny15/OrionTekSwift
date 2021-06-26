@@ -61,7 +61,7 @@ class DbConnection {
         }
     }
     
-    func insertDemo(userName: String, userId: String, country: String, city: String, zipcode: String, street: String, streetNumber: String)
+    func insertDemo(userName: String, userId: String, country: String, city: String, zipcode: String, street: String, streetNumber: String) -> Bool
     {
         var result = false
         let insertSql = "INSERT INTO ClientAddress(userID, country, city, zipcode, street, streetNumber) VALUES (?, ?, ?, ?, ?, ?);"
@@ -70,9 +70,6 @@ class DbConnection {
         
         if (sqlite3_prepare(db, insertSql, -1, &statement, nil) == SQLITE_OK) {
             
-            
-//            sqlite3_bind_int(statement, 1, 4)
-
             sqlite3_bind_text(statement, 1, (userId as NSString).utf8String, -1, nil)
             
             sqlite3_bind_text(statement, 2, (country as NSString).utf8String, -1, nil)
@@ -85,6 +82,9 @@ class DbConnection {
                 
                 print("Data insert sucessfully")
                 
+                result = true
+                return result
+                
             }else
             {
                 let errorMessage = String(cString: sqlite3_errmsg(db))
@@ -93,6 +93,8 @@ class DbConnection {
             }
             
         }
+        
+        return result
         
     }
     
@@ -142,6 +144,24 @@ class DbConnection {
        }
         
         return addressList
+    }
+    
+    func DeleteAddress(addressId: Int){
+        let query = "DELETE FROM ClientAddress Where Id = \(addressId)"
+        
+        var statement : OpaquePointer? = nil
+        
+        if (sqlite3_prepare(db, query, -1, &statement, nil) == SQLITE_OK) {
+            
+            if sqlite3_step(statement) == SQLITE_DONE
+            {
+                print("Data delete sucessfully")
+
+            }else{
+                print("an error ocurred inserting the data")
+            }
+        }
+        
     }
     
     func DeleteTable() {

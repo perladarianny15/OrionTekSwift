@@ -31,8 +31,8 @@ struct AddressView: View {
                             Text("Street: \(clientITem.street!)")
                             Text("Street Number: \(clientITem.streetNumber!)")
 
-                       }.padding()
-                    }
+                        }.padding()
+                    }.onDelete(perform: DeleteAddress)
                 }
                 .navigationBarTitle(Text("Address List of \(userName)"), displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: {
@@ -48,7 +48,6 @@ struct AddressView: View {
                         .foregroundColor(.white)
                 } )
                 
-                // invisible link inside NavigationView for add mode
                 NavigationLink(destination: addAddressView(userId: userId, userName: userName),
                 isActive: $addMode) { EmptyView() }
             }.onAppear(perform: {
@@ -56,11 +55,16 @@ struct AddressView: View {
             })
         }
     
+    private func DeleteAddress(at offsets: IndexSet)
+    {
+//        DbConnection().DeleteAddress(addressId: offsets)
+       
+        //Update
+        self.readAddress()
+    }
     private func readAddress()
     {
-        
 //        let db = DbConnection().DeleteTable()
-        
         self.allAddress = DbConnection().getAddress(userId: self.userId)
     }
 }
